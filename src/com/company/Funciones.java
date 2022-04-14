@@ -102,8 +102,8 @@ public class Funciones {
 
         imp = (double) vxH * cantHoras;
 
-        if (antiguedad >= CANT_MIN_AÑOS){
-            imp = imp + (antiguedad * CANT_POR_AÑOS);
+        if (antiguedad >= CANT_MIN_AÑOS){ //La antiguedad debe superar o igualar los 11 años de antiguedad
+            imp = imp + (antiguedad * CANT_POR_AÑOS); //Multiplicamos su antiguedad por la cantidad indicada en el enunciado (30)
         }
 
         return imp;
@@ -139,20 +139,26 @@ public class Funciones {
     /// ! Quinto Punto
 
     public void listaNum (){
+        ///Declaramos las variables necesarias para trabajar
         int num;Scanner scan = new Scanner(System.in);
         ArrayList<Integer> numeros = new ArrayList<>();
         int mayor; int menor; int sumaTodo; int sumaPar;
+
+        ///Agregamos al array todos los numeros que el usuario quiera
         do{
-            System.out.println("Ingrese el numero a añadir");
+            System.out.println("Ingrese el numero a añadir, cuando quiera parar introduzca -1");
             num = scan.nextInt();
             numeros.add(num);
-        }while (num != -1);
+        }while (num != -1); ///Siempre y cuando el numero NO sea 1
 
+        ///llamamos a las funciones que se encargan de realizar los respectivos trabajos
         mayor = buscarMayor(numeros);
         menor = buscarMenor(numeros);
         sumaTodo = sumarTodo(numeros);
         sumaPar = sumarPares(numeros);
 
+
+        ///presentamos por pantalla lo que el usuario quiere saber
         System.out.println("El numero mayor es: "+mayor);
         System.out.println("El numero menor es: "+menor);
         System.out.println("La suma de todos los numeros es: "+ sumaTodo);
@@ -160,8 +166,9 @@ public class Funciones {
     }
 
     private int buscarMayor (ArrayList<Integer> numeros){ ///Toda esta funcion se podría reducir simplemente con la libreria Collections
-        int mayor = numeros.get(0);
-        for (int i = 1; i<numeros.size();i++){
+        int mayor = numeros.get(0);///El mayor siempre sera el primero. De esta manera puede compararse con el siguiente en la lista
+
+        for (int i = 1; i<numeros.size();i++){ /// Recorremos el arreglo y comparamos
             if (mayor< numeros.get(i)){
                 mayor = numeros.get(i);
             }
@@ -170,9 +177,9 @@ public class Funciones {
     }
 
     private int buscarMenor(ArrayList<Integer> numeros){ ///Podria simplificar este codigo con la libreria Collections
-        int menor = numeros.get(0);
+        int menor = numeros.get(0);///El menor siempre será el primero. De esta manera puede compararse con el segundo
 
-        for (int i = 1; i<numeros.size();i++){
+        for (int i = 1; i<numeros.size();i++){ /// Recorremos el arreglo y comparamos
             if (menor > numeros.get(i)){
                 menor = numeros.get(i);
             }

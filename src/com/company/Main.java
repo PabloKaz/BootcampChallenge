@@ -6,7 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
             Funciones funciones = new Funciones();
-            Password password;
             Scanner scan = new Scanner(System.in);
             mostrarMenu();
 
@@ -44,12 +43,20 @@ public class Main {
     }
 
     public static void crearPassword(){
+        //Declaramos las variables necesarias
         Scanner scan = new Scanner(System.in); int length;
+
+        ///Hacemos que el usuario ingrese la longitud de la contraseña que desea
         System.out.println("Ingrese la longitud que quiere que tenga su contraseña ALEATORIA");
         length = scan.nextInt();
+
+        ///Le pasamos esa longitud a un constructor para que cree dicha contraseña
         Password contra = new Password(length);
+
+        ///La mostramos por pantalla
         System.out.println("Su contraseña es: "+ contra.getContraseña());
 
+        ///Indicamos si la misma es o no fuerte.
         if (contra.esFuerte()){
             System.out.println("Su contraseña es fuerte!");
         } else {
@@ -57,7 +64,7 @@ public class Main {
         }
     }
 
-    public static void mostrarMenu(){
+    public static void mostrarMenu(){ ///Modulo necesario para mostrar en consola el MENU del Switch.
         System.out.println("Presione 1 para acceder al punto numero 1 (N Primo)");
         System.out.println("Presione 2 para acceder al punto numero 2 (Contraseña)");
         System.out.println("Presione 3 para acceder al punto numero 3 (Empleado/Importe)");
