@@ -36,8 +36,8 @@ public class Funciones {
 
     // ! Segundo Punto
 
-    private boolean complementoPunto2(String contraseñaOriginal, String contraseñaPrueba){ /// para evitar scans en la funcion
-                                                                                    /// esta funcion solo evalua si son iguales
+    private boolean complementoPunto2(String contraseñaOriginal, String contraseñaPrueba){
+                                                                                   /// esta funcion solo evalua si son iguales
         boolean esContraseña = false;
 
         if (contraseñaOriginal.equals(contraseñaPrueba)){
