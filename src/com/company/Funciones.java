@@ -184,7 +184,7 @@ public class Funciones {
     private int sumarTodo (ArrayList<Integer> numeros){
         int total = 0;
 
-        for (Integer numero : numeros) {
+        for (Integer numero : numeros) { ///Suma todo mientras numeros(arraylist) tenga algo dentro.
             total += numero;
         }
 
@@ -195,8 +195,8 @@ public class Funciones {
         int total = 0;
 
         for (Integer numero : numeros) {
-            if (numero % 2 == 0) {
-                total += numero;
+            if (numero % 2 == 0) { ///Si el resto del numero al dividirlo por 2 es 0, entonces es par
+                total += numero;///Por lo que lo sumamos
             }
         }
 
